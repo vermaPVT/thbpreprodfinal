@@ -124,3 +124,10 @@ function showSlide(slideIndex) {
     indicators[slideIndex - 1].classList.add('active');
     currentSlide = slideIndex; // Update the current slide
 }
+
+
+    // Auto slide every 5 seconds
+    setInterval(() => {
+        currentSlide = (currentSlide % 3) + 1;
+        showSlide(currentSlide);
+    }, 3000);
