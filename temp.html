@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpBook Foundation | Animal Welfare and Adoption</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="./assets/logo.png" alt="HelpBook Foundation Logo">
+        </a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="environment.html">Environment</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="food.html">Food</a></li>
+            <li><a href="animals.html">Animals</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <button class="help-now">Help Now</button>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+    <h1>Animal Welfare & Adoption</h1>
+    <p>Dedicated to promoting animal welfare and facilitating pet adoption for a compassionate community.</p>
+</section>
+
+<!-- Main Content -->
+<main class="content-section">
+    <div class="section about">
+        <h2>Our Mission for Animal Welfare</h2>
+        <p>At HelpBook Foundation, we believe in a compassionate world where every animal has a safe and loving home. Our efforts focus on rescuing animals, promoting adoption, and spreading awareness about humane treatment and responsible pet ownership.</p>
+    </div>
+
+    <div class="section initiatives">
+        <h2>Our Key Initiatives</h2>
+        <ul>
+            <li><strong>Rescue and Rehabilitation:</strong> We collaborate with shelters and rescue groups to provide rehabilitation for abandoned and stray animals.</li>
+            <li><strong>Adoption Drives:</strong> We organize events to connect adoptable pets with loving families and individuals who are looking to provide a forever home.</li>
+            <li><strong>Animal Welfare Education:</strong> Programs aimed at educating the community on responsible pet ownership, animal care, and humane practices.</li>
+        </ul>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="quote-section">
+        <img src="./assets/mahatma-gandhi.jpg" alt="Mahatma Gandhi" class="quote-image">
+        <div class="quote-text">
+            <h2>“The greatness of a nation and its moral progress can be judged by the way its animals are treated.”</h2>
+            <p>- Mahatma Gandhi</p>
+        </div>
+    </div>
+
+    <!-- Forms Section -->
+    <section class="form-section">
+        <h2>Get Involved</h2>
+        <div class="form-container">
+            <!-- Adoption Form -->
+            <div class="form-box">
+                <h3>Animals</h3>
+                <form action="#" method="post">
+                    <label for="adopt-name">Your Name:</label>
+                    <input type="text" id="adopt-name" name="adopt-name" required>
+                    <label for="adopt-contact">Contact Information:</label>
+                    <input type="text" id="adopt-contact" name="adopt-contact" required>
+                    <label for="animal-preference">Preferred Animal Type:</label>
+                    <input type="text" id="animal-preference" name="animal-preference" required>
+                    <button type="submit">Submit Adoption Form</button>
+                </form>
+            </div>
+            <!-- Pet Registration Form -->
+            <div class="form-box">
+                <h3>Register Your Pet</h3>
+                <form action="#" method="post">
+                    <label for="owner-name">Owner's Name:</label>
+                    <input type="text" id="owner-name" name="owner-name" required>
+                    <label for="pet-name">Pet's Name:</label>
+                    <input type="text" id="pet-name" name="pet-name" required>
+                    <button type="submit">Register Pet</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 HelpBook Foundation. All Rights Reserved.</p>
+</footer>
+
+
+<style>
+
+    /* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar .logo img {
+    width: 120px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar nav ul li a, .help-now {
+    color: #fff;
+    text-decoration: none;
+}
+
+.help-now {
+    background-color: #28a745;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Page Header */
+.page-header {
+    background: #f8e7e0;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.page-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Content Section */
+.content-section {
+    padding: 40px 20px;
+}
+
+/* Initiatives Section */
+.section h2 {
+    font-size: 1.8em;
+    color: #555;
+}
+
+/* Quote Section */
+.quote-section {
+    background-color: #ffebdb;
+    padding: 40px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+    position: relative;
+}
+
+.quote-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 99, 71, 0.5) 0,
+        rgba(255, 99, 71, 0.5) 15px,
+        rgba(255, 69, 0, 0.5) 15px,
+        rgba(255, 69, 0, 0.5) 30px,
+        rgba(255, 160, 122, 0.5) 30px,
+        rgba(255, 160, 122, 0.5) 45px
+    );
+    opacity: 0.4;
+    border-radius: 8px;
+    z-index: 0;
+}
+
+.quote-text {
+    color: #333;
+}
+
+/* Form Section */
+.form-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.form-container {
+    display: flex;
+    gap: 20px;
+}
+
+.form-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+
+</style>
+
+
+</body>
+</html>

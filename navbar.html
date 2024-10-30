@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The HelpBook Foundation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            backdrop-filter: blur(10px);
+            background-color: rgba(0, 26, 36, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-box-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 80px;
+            margin-right: 20px;
+            margin-left: 25px;
+        }
+        
+        .logo-box-container a {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .parallelogram {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .parallelogram-bottom {
+            background-color: #e63946;
+            right: 20px;
+            z-index: 1;
+        }
+
+        .parallelogram-middle {
+            background-color: #28a745;
+            right: 10px;
+            z-index: 2;
+        }
+
+        .parallelogram-top {
+            background-color: #ffffff;
+            right: 0;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        a .logo {
+            height: 90%;
+            width: auto;
+            object-fit: cover;
+        }
+
+        .navbar-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 0 10px;
+            padding: 8px 10px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            color: #e65561;
+        }
+
+        .navbar-links a::after {
+            content: '';
+            transition: 0.2s ease-in-out all;
+            background-color: #e65561;
+            height: 3px;
+            width: 0px;
+            position: absolute;
+            bottom: 3px;
+            left: 10px;
+            display: inline-block;
+        }
+
+        .navbar-links a:hover::after {
+            width: 35px;
+        }
+
+        .help-now {
+            text-decoration: none;
+            color: #fff!important;
+            background-color: none;
+            border: 1px solid #fff;
+            padding: 8px 20px!important;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .help-now:hover {
+            background-color: #28a745;
+            color: #fff!important;
+            border-color: #fff;
+        }
+
+        .barsbtn {
+            transition: 0.2s;
+            color: white;
+            background-color: #28a745;
+            border: none;
+        }
+
+        .barsbtn:hover {
+            background-color: #218838;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .navbar-links {
+                display: none;
+            }
+
+            .help-now {
+                display: none!important;
+            }
+
+            .barsbtn {
+                display: block;
+                background-color: none!important;
+                border: 1px solid #fff;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="navbar-left">
+        <div class="barsbtn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="logo-box-container">
+            <div class="parallelogram parallelogram-bottom"></div>
+            <div class="parallelogram parallelogram-middle"></div>
+            <div class="parallelogram parallelogram-top">
+                <a href="./">
+                <img src="./assets/logo.png" alt="HelpBook Logo" class="logo">
+                </a>
+            </div>
+        </div>
+        <div class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#initiatives">Initiatives</a>
+            <a href="#pets">Pets</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+    </div>
+    <a href="#help" class="help-now">Help Now</a>
+</div>
+
+<div class="navbarBg"></div>
+
+<nav class="navbarMob">
+    <ul>
+        <li><a href="./">Home</a><div class="line"></div></li>
+        <li><a href="./about.html">About</a><div class="line"></div></li>
+        <li><a href="./contact.html">Contact</a><div class="line"></div></li>
+        <li><a href="./donate.html">Donate</a><div class="line"></div></li>
+        <li><a href="./environment.html">Environment</a><div class="line"></div></li>
+        <li><a href="./education.html">Education</a><div class="line"></div></li>
+        <li><a href="./food.html">Food & Health</a><div class="line"></div></li>
+        <li><a href="./adoption.html">Animals</a><div class="line"></div></li>
+    </ul>
+</nav>
+
+<div class="navclose">
+    <i class="fa-solid fa-xmark"></i>
+</div>
+
+<div style="padding: 100px 30px; font-size: 18px;">
+    <h1>Welcome to The HelpBook Foundation</h1>
+    <p>This is the home of positive change, where social, environmental, and humanitarian initiatives come to life.</p>
+</div>
+
+<div class="topBtn">
+    <span id="back-to-top"><i class="fa-solid fa-arrow-up"></i></span>
+    <span class="indicate">↑ Back to top</span>
+</div>
+
+<script src="./script.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: white; /* White background */
+            height: 450px; /* Set height of carousel */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .carousel-slide {
+            display: none;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            position: absolute; /* Positioning for sliding effect */
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 80%; /* Full height */
+            transition: transform 0.5s ease-in-out; /* Smooth transition */
+            margin-top: 20px;
+        }
+
+        .carousel-slide.active {
+            display: flex; /* Show active slide */
+        }
+
+        .carouselContent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%; /* Full height */
+            width: 70%;
+        }
+
+
+        .carousel-image {
+            width: 300px; /* Fixed image width */
+            height: 300px; /* Fixed image height */
+            border: 10px solid white; /* White border */
+            border-bottom: 20px solid white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1; /* Bring image above the background */
+            object-fit: cover;
+        }
+
+
+
+        .carousel-text {
+            margin-left: 20px; /* Space between image and text */
+            z-index: 1; /* Bring text above the background */
+            width: 80%;
+            color: #333;
+            margin-top: 40px;
+        }
+
+
+        .carousel-text h3 {
+            font-size: 2rem;
+            margin: 0;
+            color: #efefef;
+        }
+
+        .carousel-text h3::after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 30px;
+            background-color: #efefef;
+            margin: 10px 0;
+        }
+
+        .carousel-text p {
+            margin: 5px 0;
+            color: #efefef;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .carousel-text p:first-of-type {
+            font-weight: bold;
+            font-size: 1.2rem;
+
+        }
+
+        .carousel-background {
+            position: absolute;
+            top: 0px;
+            left: 10px;
+            width: 95vw;
+            height: 280px;
+            z-index: 0; /* Behind the content */
+            background: #009f7c; /* Fading red color */
+            transform: translateY(30%);
+            border-radius: 20px;
+        }
+
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 30px; /* Distance from bottom */
+            left: 50px; /* Distance from right */
+            display: flex;
+            gap: 10px; /* Space between indicators */
+        }
+
+        .carousel-text a {
+            margin-top: 10px;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+            transition: 0.2s all ease-in-out;
+            border-radius: 5px;
+            border: 1px solid white;
+            color: white;
+            margin-right: 12px;
+        }
+
+
+        .carousel-text a.link.facebook:hover {
+            background-color: #3b5998;
+            border-color: #3b5998;
+        }
+
+        .carousel-text a.link.instagram:hover {
+            background-color: #f86999;
+            border-color: #f86999;
+            
+        }
+
+        .carousel-text a.link.twitter:hover {
+            background-color: #1da1f2;
+            border-color: #1da1f2;
+        }
+
+
+
+
+        @media (max-width: 800px) {
+
+            .carousel-container {
+                padding-top: 30px;
+                margin-top: 20px;
+                height: 550px;
+            }
+
+            .carousel-slide {
+                flex-direction: column;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .carouselContent {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .carousel-image {
+                width: 220px;
+                height: 250px;
+            }
+
+            .carousel-text h3::after {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            display: none;
+            
+            }
+
+            .carousel-text {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .carousel-indicators {
+                justify-content: center;
+                align-content: center;
+                left: 0;
+                bottom: 10px;
+                width: 100%;
+            }
+
+            .carousel-background {
+                height: 95%;
+                transform: translateY(0%);
+                width: 100vw;
+                border-radius: 8px;
+                margin-left: 0px;
+                left: 0;
+            }
+        }
+
+
+
+
+        .indicator {
+            width: 50px; /* Width of indicators */
+            height: 6px; /* Height of indicators */
+            background-color: #f5f5f5; /* Indicator color */
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition */
+            opacity: 0.5;
+        }
+
+
+
+        .indicator.active {
+            background-color: #00d19d;
+            opacity: 1;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="carousel-container">
+    <div class="carousel-background">
+    </div>
+    
+    <div class="carousel-slide active" style="transform: translateX(0);">
+        <div class="carouselContent">
+            <img src="assets/profile1.jpg" alt="President" class="carousel-image">
+            <div class="carousel-text">
+                <h3>John Doe</h3>
+                <p>President</p>
+                <p>Dedicated to promoting sustainable social initiatives and leading impactful projects.</p>
+                <div class="link-containerProf">
+                    <a class="link facebook" href="./"><i class="fab fa-facebook"></i>&nbsp;Facebook</a>
+                    <a class="link instagram" href="./"><i class="fab fa-instagram"></i>&nbsp;Instagram</a>
+                    <a class="link twitter" href="./"><i class="fab fa-twitter"></i>&nbsp;Twitter</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="carousel-slide" style="transform: translateX(100%);">
+        <div class="carouselContent">
+            <img src="https://via.placeholder.com/300x400" alt="Vice President" class="carousel-image">
+            <div class="carousel-text">
+                <h3>Jane Smith</h3>
+                <p>Vice President</p>
+                <p>Focused on educational programs and environmental conservation efforts.</p>
+                <a href="./">View More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-slide" style="transform: translateX(100%);">
+        <div class="carouselContent">
+            <img src="https://via.placeholder.com/300x400" alt="Secretary" class="carousel-image">
+            <div class="carousel-text">
+                <h3>Robert Brown</h3>
+                <p>Secretary</p>
+                <p>Committed to animal welfare and community support initiatives.</p>
+                <a href="./">View More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-indicators">
+        <span class="indicator active" onclick="showSlide(1)"></span>
+        <span class="indicator" onclick="showSlide(2)"></span>
+        <span class="indicator" onclick="showSlide(3)"></span>
+    </div>
+</div>
+
+<script>
+    let currentSlide = 1;
+
+    function showSlide(slideIndex) {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.indicator');
+
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active');
+            indicators[index].classList.remove('active');
+
+            // Adjust the transform property for sliding effect
+            if (index === slideIndex - 1) {
+                slide.classList.add('active');
+                slide.style.transform = 'translateX(0)';
+            } else if (index < slideIndex - 1) {
+                slide.style.transform = 'translateX(-100%)';
+            } else {
+                slide.style.transform = 'translateX(100%)';
+            }
+        });
+        indicators[slideIndex - 1].classList.add('active');
+        currentSlide = slideIndex; // Update the current slide
+    }
+
+    // Auto slide every 5 seconds
+    setInterval(() => {
+        currentSlide = (currentSlide % 3) + 1;
+        showSlide(currentSlide);
+    }, 5000);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+</body>
+</html>
